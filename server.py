@@ -102,7 +102,7 @@ def modelo():
 
 @servidorWeb.route("/app",methods=["POST"])
 def app():
-    data=request.json
+    data=request.data
     print(data)
         
 if __name__ == '__main__':
