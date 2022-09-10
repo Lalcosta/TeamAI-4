@@ -100,5 +100,10 @@ def modelo():
     #Regresar la salida del modelo
     return jsonify({"Resultado":str(resultado[0])})
 
+@servidorWeb.route("/app",methods=["POST"])
+def app():
+    data=request.json
+    print(data)
+        
 if __name__ == '__main__':
     servidorWeb.run(debug=False,host='0.0.0.0',port='8080')
