@@ -104,14 +104,17 @@ def modelo():
 
 @servidorWeb.route("/app",methods=["POST"])
 def app():
+    
     data=request.json
     arr=[]
     print(data)
     for i in data:
         arr.append(data[i])
-        print(i,":",data[i])
-    print(arr)
-    return arr
+    
+    pred= dt.predict([[arr]])    
+    print(pred)
+   
+    return pred
 
 
 if __name__ == '__main__':
