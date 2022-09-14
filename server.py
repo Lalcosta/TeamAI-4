@@ -108,7 +108,10 @@ def app():
     arr=[]
     for i in data:
         arr.append(data[i])
+        print(i,":",data[i])
     print(arr)
     return arr
+
+
 if __name__ == '__main__':
     servidorWeb.run(debug=False,host='0.0.0.0',port='8080')
