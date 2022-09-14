@@ -106,6 +106,7 @@ def modelo():
 def app():
     data=request.data
     arr=[]
+    data=data.decode("utf-8")
     print(data)
     for i in data:
         arr.append(data[i])
