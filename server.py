@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 
 #Cargar el modelo
-dt = load('RandomForest_Retov1.joblib')
+dt = load('FinalModel.joblib')
 
 #Generar el servidor (Back-end)
 servidorWeb = Flask(__name__)
@@ -100,10 +100,15 @@ def modelo():
     #Regresar la salida del modelo
     return jsonify({"Resultado":str(resultado[0])})
 
+
+
 @servidorWeb.route("/app",methods=["POST"])
 def app():
     data=request.data
-    print(data)
-    return data
+    arr=[]
+    for i in data:
+        arr.append(data[i])
+    print(arr)
+    return arr
 if __name__ == '__main__':
     servidorWeb.run(debug=False,host='0.0.0.0',port='8080')
