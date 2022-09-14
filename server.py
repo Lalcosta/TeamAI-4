@@ -106,6 +106,7 @@ def modelo():
 def app():
     data=request.data
     arr=[]
+    print(data)
     for i in data:
         arr.append(data[i])
         print(i,":",data[i])
