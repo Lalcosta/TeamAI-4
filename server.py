@@ -104,9 +104,8 @@ def modelo():
 
 @servidorWeb.route("/app",methods=["POST"])
 def app():
-    data=request.data
+    data=request.json
     arr=[]
-    data=data.decode("utf-8")
     print(data)
     for i in data:
         arr.append(data[i])
