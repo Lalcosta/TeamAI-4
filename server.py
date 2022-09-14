@@ -111,7 +111,7 @@ def app():
     for i in data:
         arr.append(data[i])
     
-    pred= dt.predict([[arr]])    
+    pred= dt.predict([arr])    
     print(pred)
    
     return pred
