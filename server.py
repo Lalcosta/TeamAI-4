@@ -111,10 +111,11 @@ def app():
     for i in data:
         arr.append(data[i])
     
-    pred= dt.predict([arr])    
+    pred= dt.predict(arr.reshape(1,-1))    
+    
     print(pred)
    
-    return pred
+    return jsonify({"Viajas":str(pred[0])})
 
 
 if __name__ == '__main__':
