@@ -110,7 +110,7 @@ def app():
     print(data)
     for i in data:
         arr.append(data[i])
-    
+    arr=np.array(arr)
     pred= dt.predict(arr.reshape(1,-1))    
     
     print(pred)
